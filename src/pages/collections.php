@@ -22,17 +22,17 @@ $extra_class = "py-32";
 include('../components/hero.php');
 ?>
 
-<section class="flex-grow py-5 md:py-5">
+<section class="grow py-5 md:py-5">
 
 
-  <div class="relative z-10 m-auto max-w-screen-xl justify-center py-5">
+  <div class="relative z-10 m-auto max-w-7xl justify-center py-5">
     <!-- Collections Grid -->
     <div class="grid grid-cols-1 gap-8 px-4 sm:grid-cols-2 lg:grid-cols-3">
 
       <!-- Collection 1: Issa 2 -->
       <div
         class="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgba(210,199,229,0.12)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(210,199,229,0.2)]">
-        <div class="aspect-[3/4] overflow-hidden bg-gradient-to-br from-amber-900 to-amber-700">
+        <div class="aspect-3/4 overflow-hidden bg-linear-to-br from-amber-900 to-amber-700">
           <img src="../img/pp-1.webp" alt="Issa 2 Wedding Dress"
             class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
         </div>
@@ -48,7 +48,7 @@ include('../components/hero.php');
       <!-- Collection 2: Jenna -->
       <div
         class="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgba(210,199,229,0.12)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(210,199,229,0.2)]">
-        <div class="aspect-[3/4] overflow-hidden bg-gradient-to-br from-amber-900 to-amber-700">
+        <div class="aspect-3/4 overflow-hidden bg-linear-to-br from-amber-900 to-amber-700">
           <img src="../img/pp-2.webp" alt="Jenna Wedding Dress"
             class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
         </div>
@@ -64,7 +64,7 @@ include('../components/hero.php');
       <!-- Collection 3: Mia 2 -->
       <div
         class="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgba(210,199,229,0.12)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(210,199,229,0.2)]">
-        <div class="aspect-[3/4] overflow-hidden bg-gradient-to-br from-amber-900 to-amber-700">
+        <div class="aspect-3/4 overflow-hidden bg-linear-to-br from-amber-900 to-amber-700">
           <img src="../img/pp-3.jpg" alt="Mia 2 Wedding Dress"
             class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
         </div>
@@ -80,7 +80,7 @@ include('../components/hero.php');
       <!-- Collection 4: Mia -->
       <div
         class="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgba(210,199,229,0.12)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(210,199,229,0.2)]">
-        <div class="aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-900 to-gray-700">
+        <div class="aspect-3/4 overflow-hidden bg-linear-to-br from-gray-900 to-gray-700">
           <img src="../img/pp-4.jpg" alt="Mia Wedding Dress"
             class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
         </div>
@@ -96,7 +96,7 @@ include('../components/hero.php');
       <!-- Collection 5: Juliette -->
       <div
         class="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgba(210,199,229,0.12)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(210,199,229,0.2)]">
-        <div class="aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-900 to-gray-700">
+        <div class="aspect-3/4 overflow-hidden bg-linear-to-br from-gray-900 to-gray-700">
           <img src="../img/pp-5.jpg" alt="Juliette Wedding Dress"
             class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
         </div>
@@ -112,7 +112,7 @@ include('../components/hero.php');
       <!-- Collection 6: Sarah -->
       <div
         class="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgba(210,199,229,0.12)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(210,199,229,0.2)]">
-        <div class="aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-900 to-gray-700">
+        <div class="aspect-3/4 overflow-hidden bg-linear-to-br from-gray-900 to-gray-700">
           <img src="../img/pp-6.webp" alt="Sarah Wedding Dress"
             class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
         </div>

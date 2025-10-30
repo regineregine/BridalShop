@@ -38,7 +38,7 @@ renderHeader([
   'mainClass' => 'flex-1'
 ]);
 ?>
-<div class="mx-auto max-w-screen-xl flex-1 py-10 px-4">
+<div class="mx-auto max-w-7xl flex-1 py-10 px-4">
   <div class="w-full">
     <!-- Breadcrumbs -->
     <nav class="mb-6">

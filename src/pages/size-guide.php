@@ -18,13 +18,10 @@ include('../components/hero.php');
 ?>
 
 <section class="py-16 md:py-10">
-  <div class="relative z-10 m-auto max-w-screen-xl justify-center px-4 pb-4">
+  <div class="relative z-10 m-auto max-w-7xl justify-center px-4 pb-4">
 
-    <!-- Introduction -->
     <div class="text-center">
-      <!-- FEATURED IMAGES CAROUSEL -->
       <?php
-      // Dynamically select 5 images from the src/img directory (prefer project images)
       $imgDir = __DIR__ . '/../img';
       $available = [];
       if (is_dir($imgDir)) {
@@ -37,7 +34,6 @@ include('../components/hero.php');
         }
       }
 
-      // Use the user-specified bg images explicitly
       $images = ['bg-2.png', 'bg-3.png', 'bg-4.png', 'bg-5.png'];
       ?>
 
@@ -52,8 +48,8 @@ include('../components/hero.php');
               <!-- Slides wrapper -->
               <div class="carousel-track relative flex transition-transform duration-700 ease-in-out">
                 <?php foreach ($images as $idx => $img): ?>
-                  <div class="carousel-slide flex-shrink-0 w-full md:w-full">
-                    <div class="aspect-[10/10] md:aspect-[3/2] overflow-hidden rounded-lg bg-white">
+                  <div class="carousel-slide shrink-0 w-full md:w-full">
+                    <div class="aspect-10/10 md:aspect-3/2 overflow-hidden rounded-lg bg-white">
                       <img src="../img/<?php echo htmlspecialchars($img); ?>" alt="Featured <?php echo $idx + 1; ?>"
                         class="h-full w-full object-contain" loading="lazy" decoding="async" />
                     </div>
@@ -193,7 +189,7 @@ include('../components/hero.php');
 
           <!-- Visual Guide -->
           <div class="flex items-center justify-center">
-            <div class="bg-gradient-to-br from-candy-cream to-candy-pink-light rounded-lg p-8 text-center">
+            <div class="bg-linear-to-br from-candy-cream to-candy-pink-light rounded-lg p-8 text-center">
               <div class="w-32 h-48 mx-auto mb-4 bg-white rounded-lg shadow-lg flex items-center justify-center">
                 <div class="text-center">
                   <div class="w-16 h-16 bg-candy-peach rounded-full mx-auto mb-2 flex items-center justify-center">

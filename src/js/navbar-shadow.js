@@ -10,7 +10,6 @@
         $nav.removeClass(shadowClass);
       }
     }
-    // initial
     checkScroll();
     $(window).on('scroll', checkScroll);
   });

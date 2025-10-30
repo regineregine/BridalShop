@@ -1,5 +1,4 @@
-// Tailwind + jQuery scroll-based fade/slide-up animation
-// Applies to all .scroll-fade elements (or customize selector for global)
+
 (function($){
   $(function(){
     var selector = '.scroll-fade, section, .card, img, h1, h2, h3, h4, h5, h6, p, button, .btn-primary, .btn-secondary';
@@ -20,6 +19,6 @@
     }
     $(window).on('scroll resize', reveal);
     $(window).on('load', reveal);
-    setTimeout(reveal, 100); // Initial check
+    setTimeout(reveal, 100); 
   });
 })(jQuery);

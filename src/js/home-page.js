@@ -28,7 +28,6 @@
     setTimeout(function () { modal.classList.add('opacity-0', 'pointer-events-none'); }, 200);
   }
 
-  // Always show modal if present (server controls rendering)
   showModal();
   try { sessionStorage.setItem('welcomeShown', '1'); } catch (e) {}
 

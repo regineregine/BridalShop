@@ -2,7 +2,6 @@
 require_once('../backend/session_check.php');
 $isLoggedIn = isLoggedIn();
 
-// Get user data directly from session for consistency
 $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : null;
 $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
 require_once('../layouts/app.php');
@@ -21,7 +20,7 @@ $extra_class = "py-32";
 include('../components/hero.php');
 ?>
 
-<div class="mx-auto max-w-screen-xl px-4 py-20">
+<div class="mx-auto max-w-7xl px-4 py-20">
 
   <!-- Reservation Form -->
   <section class="mb-12 card grid grid-cols-1 gap-6">

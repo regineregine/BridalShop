@@ -1,18 +1,15 @@
 <?php
-// Reusable Hero Section
-// Accepts: $title, $highlight, $subtitle, $extra_class (optional)
+
 ?>
 <header
-    class="relative overflow-hidden bg-gradient-to-b from-candy-cream via-candy-pink-light to-candy-lavender-light text-center min-h-[320px] sm:min-h-[420px] md:min-h-[520px]"
+    class="relative overflow-hidden bg-linear-to-b from-candy-cream via-candy-pink-light to-candy-lavender-light text-center min-h-80 sm:min-h-[420px] md:min-h-[520px]"
     style="
     background-image: url('../img/bg-1.png');
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
   ">
-    <!-- Background overlay for better text readability -->
-    <div
-        class="absolute inset-0 bg-gradient-to-b from-candy-cream/80 via-candy-pink-light/70 to-candy-lavender-light/80">
+    <div class="absolute inset-0 bg-linear-to-b from-candy-cream/80 via-candy-pink-light/70 to-candy-lavender-light/80">
     </div>
     <div
         class="relative z-10 mx-auto max-w-4xl px-4 py-20 sm:max-w-5xl sm:py-28 md:py-32 <?php echo $extra_class ?? ''; ?>">

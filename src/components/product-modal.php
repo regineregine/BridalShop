@@ -3,7 +3,7 @@
     class="modal-panel relative mx-auto hidden max-h-[calc(100svh-2rem)] w-full max-w-3xl scale-95 overflow-y-auto rounded-2xl border border-pink-100/40 bg-white p-0 text-pink-900 opacity-0 shadow-[0_10px_30px_rgba(236,72,153,0.06)] ring-1 ring-pink-50 transition-all duration-300 sm:max-h-[calc(100svh-4rem)]">
     <!-- scroll shadows -->
     <div
-        class="shadow-top pointer-events-none sticky top-0 z-10 h-6 bg-gradient-to-b from-white/90 to-transparent opacity-0 transition-opacity duration-200">
+        class="shadow-top pointer-events-none sticky top-0 z-10 h-6 bg-linear-to-b from-white/90 to-transparent opacity-0 transition-opacity duration-200">
     </div>
 
     <!-- header -->
@@ -34,6 +34,6 @@
     </div>
 
     <div
-        class="shadow-bottom pointer-events-none sticky bottom-0 z-10 h-8 bg-gradient-to-t from-white/90 to-transparent opacity-0 transition-opacity duration-200">
+        class="shadow-bottom pointer-events-none sticky bottom-0 z-10 h-8 bg-linear-to-t from-white/90 to-transparent opacity-0 transition-opacity duration-200">
     </div>
 </div>

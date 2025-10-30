@@ -27,7 +27,7 @@ renderHeader([
 ?>
 
 <section class="py-10 sm:py-12">
-  <div class="mx-auto max-w-screen-xl px-4">
+  <div class="mx-auto max-w-7xl px-4">
     <nav class="mb-6 text-sm text-neutral">
       <ol class="flex items-center gap-2">
         <li><a href="home.php" class="transition-colors text-slate-700  hover:text-pink-500">Home</a></li>

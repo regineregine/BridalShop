@@ -1,9 +1,7 @@
 <?php
-// Include session check to get user data
 require_once('../backend/session_check.php');
 $isLoggedIn = isLoggedIn();
 
-// Get user data directly from session for consistency
 $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : null;
 $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
 ?>
@@ -253,7 +251,6 @@ $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
             if (window.innerWidth >= 768) return;
             if (target.tagName === "A") closeMenu();
         });
-        // Ensure proper state on resize across breakpoints
         window.addEventListener("resize", function () {
             if (window.innerWidth >= 768) {
                 menu.classList.remove("hidden");
@@ -265,7 +262,6 @@ $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
                     dd.classList.add("opacity-0", "invisible");
                 });
             } else {
-                // collapsed by default on mobile
                 if (!menu.classList.contains("hidden")) closeMenu();
             }
         });

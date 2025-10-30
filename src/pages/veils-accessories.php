@@ -39,7 +39,7 @@ renderHeader([
 ]);
 ?>
 
-<section class="mx-auto max-w-screen-xl px-4 py-10">
+<section class="mx-auto max-w-7xl px-4 py-10">
   <div class="w-full">
     <!-- Breadcrumbs -->
     <nav class="mb-6">

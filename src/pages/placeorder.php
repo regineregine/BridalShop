@@ -80,7 +80,7 @@ renderHeader([
     <div class="mx-auto max-w-4xl px-4">
         <div
             class="overflow-hidden rounded-3xl border border-pink-200 bg-white shadow-[0_10px_30px_rgba(236,72,153,0.08)]">
-            <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-10 text-center text-white">
+            <div class="bg-linear-to-r from-pink-500 to-rose-500 p-10 text-center text-white">
                 <div
                     class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white text-pink-500">
                     <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">

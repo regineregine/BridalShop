@@ -50,10 +50,8 @@ try {
     $_SESSION['user_name'] = $user['first_name'] . ' ' . $user['last_name'];
     $_SESSION['user_email'] = $user['email'];
     $_SESSION['logged_in'] = true;
-    // Show welcome modal on next page load (immediately after login)
     $_SESSION['show_welcome'] = true;
 
-    // After successful login, redirect to intended page or default
     $redirectTo = isset($_SESSION['redirect_after_login']) ? $_SESSION['redirect_after_login'] : '../pages/home.php';
     unset($_SESSION['redirect_after_login']);
 

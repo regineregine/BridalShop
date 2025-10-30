@@ -4,7 +4,6 @@ require_once('../backend/connections.php');
 
 $isLoggedIn = isLoggedIn();
 
-// The amounts of products to show on each page
 $num_products_on_each_page = 9;
 
 $current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int) $_GET['p'] : 1;
@@ -17,7 +16,6 @@ $stmt->execute();
 
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Get the total number of products
 $total_products = $pdo->query('SELECT * FROM products')->rowCount();
 
 require_once('../layouts/app.php');
@@ -40,7 +38,7 @@ include('../components/hero.php');
 
 
 
-<div class="mx-auto max-w-screen-xl py-10">
+<div class="mx-auto max-w-7xl py-10">
   <div class="flex flex-col gap-8">
     <!-- ALL PRODUCTS -->
     <h2
@@ -54,7 +52,7 @@ include('../components/hero.php');
       </div>
     </div>
 
-    <div class="mx-auto max-w-screen-xl">
+    <div class="mx-auto max-w-7xl">
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <?php if (empty($products)): ?>
           <div class="col-span-full text-center py-12">
@@ -99,7 +97,7 @@ include('../components/hero.php');
                       <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
                       <input type="hidden" name="quantity" value="1">
                       <button type="submit"
-                        class="cursor-pointer rounded-md bg-gradient-to-r from-pink-500 to-rose-500 px-4 py-2 text-white transition hover:shadow-[0_0_30px_rgba(236,72,153,0.25)] hover:scale-105">
+                        class="cursor-pointer rounded-md bg-linear-to-r from-pink-500 to-rose-500 px-4 py-2 text-white transition hover:shadow-[0_0_30px_rgba(236,72,153,0.25)] hover:scale-105">
                         Add to Cart
                       </button>
                     </form>
@@ -139,7 +137,7 @@ include('../components/hero.php');
                     <?php endif; ?>
                   <?php else: ?>
                     <button type="button" onclick="openModal('login-modal')"
-                      class="cursor-pointer rounded-md bg-gradient-to-r from-pink-500 to-rose-500 px-4 py-2 text-white transition hover:shadow-[0_0_30px_rgba(236,72,153,0.25)] hover:scale-105">
+                      class="cursor-pointer rounded-md bg-linear-to-r from-pink-500 to-rose-500 px-4 py-2 text-white transition hover:shadow-[0_0_30px_rgba(236,72,153,0.25)] hover:scale-105">
                       Add to Cart
                     </button>
                   <?php endif; ?>

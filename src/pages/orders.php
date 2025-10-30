@@ -77,7 +77,7 @@ renderHeader([
 ?>
 
 <section class="py-16 md:py-20">
-    <div class="mx-auto max-w-screen-xl px-4">
+    <div class="mx-auto max-w-7xl px-4">
         <div class="mb-12 text-center">
             <h1
                 class="font-Tinos  text-2xl leading-none tracking-widest text-slate-900 uppercase md:tracking-[0.6em] lg:tracking-[0.8em] mb-8 text-center">

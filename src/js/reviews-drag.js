@@ -1,11 +1,9 @@
-// jQuery drag-to-scroll and button-slide for reviews row
 (function($){
   $(function(){
     var $row = $('#reviews-row');
     if (!$row.length) return;
     var isDown = false, startX, scrollLeft;
 
-    // Mouse drag to scroll
     $row.on('mousedown', function(e){
       isDown = true;
       $row.addClass('cursor-grabbing');
@@ -24,7 +22,6 @@
       $row.removeClass('cursor-grabbing');
     });
 
-    // Touch drag to scroll
     $row.on('touchstart', function(e){
       isDown = true;
       startX = e.originalEvent.touches[0].pageX - $row.offset().left;
@@ -40,7 +37,6 @@
       isDown = false;
     });
 
-    // Button click to slide
     function slideBy(dir) {
       var $items = $row.find('figure');
       var itemW = $items.first().outerWidth(true);

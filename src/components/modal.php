@@ -44,7 +44,7 @@
                 <div class="relative text-center text-sm text-neutral">
                     <span class="relative z-10 bg-white px-4">Don't have an account?</span>
                     <span
-                        class="absolute inset-x-0 top-1/2 -z-10 h-px bg-gradient-to-r from-transparent via-[var(--color-neutral-light)] to-transparent"></span>
+                        class="absolute inset-x-0 top-1/2 -z-10 h-px bg-linear-to-r from-transparent via-[var(--color-neutral-light)] to-transparent"></span>
                 </div>
             </div>
 

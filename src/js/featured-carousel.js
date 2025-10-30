@@ -1,11 +1,4 @@
-/* jQuery-based featured carousel
- * Requirements:
- * - Auto-slide every 5s
- * - Manual navigation by clicking left/right zones
- * - Continue auto-sliding even after manual navigation
- * - Smooth transitions
- * - Uses Tailwind classes for styling; no vanilla JS
- */
+
 
 (function($){
   $(function(){
@@ -17,11 +10,11 @@
     var $indicators = $carousel.find('.indicator');
     var total = $slides.length;
     var current = 0;
-    var interval = 2000; // 2s
+    var interval = 2000; 
     var timer = null;
     var animating = false;
 
-    // Setup: set widths so that slides sit horizontally
+    
     function setup(){
       $track.css({
         'width': (100 * total) + '%',
@@ -74,7 +67,6 @@
       }
     }
 
-    // Click handlers
     $carousel.find('#carousel-next').on('click', function(e){
       e.preventDefault();
       next();
@@ -86,14 +78,12 @@
       startTimer();
     });
 
-    // Indicators click
     $indicators.on('click', function(){
       var idx = parseInt($(this).attr('data-slide'), 10);
       goTo(idx, true);
       startTimer();
     });
 
-    // Touch support via jQuery events (optional, use pointer events if available)
     var startX = null;
     $carousel.on('touchstart', function(e){
       var t = e.originalEvent.touches && e.originalEvent.touches[0];
@@ -111,18 +101,15 @@
       startX = null;
     });
 
-    // Keyboard navigation for accessibility
     $carousel.attr('tabindex', '0');
     $carousel.on('keydown', function(e){
       if (e.key === 'ArrowLeft') { prev(); startTimer(); }
       if (e.key === 'ArrowRight') { next(); startTimer(); }
     });
 
-    // Init
     setup();
     startTimer();
 
-    // Re-setup on resize
     $(window).on('resize', function(){
       setup();
     });

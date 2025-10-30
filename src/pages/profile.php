@@ -1,39 +1,31 @@
 <?php
 require_once('../backend/session_check.php');
 
-// Check if user is logged in
 if (!isLoggedIn()) {
   header('Location: ../pages/home.php');
   exit;
 }
 
-// Get user data directly from session to avoid function issues
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : null;
 $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
 
-// Validate session data
 if (!$user_id || !$user_name || !$user_email) {
-  // Clear invalid session and redirect
   session_destroy();
   header('Location: ../pages/home.php');
   exit;
 }
 
-// Get user's full data from database
 require_once('../backend/connections.php');
-// Get user's full data from database
 $stmt = $pdo->prepare("SELECT * FROM customers WHERE customer_id = ?");
 $stmt->execute([$user_id]);
 $userData = $stmt->fetch();
 if (!$userData || !is_array($userData)) {
-  // User not found, clear session and redirect
   session_destroy();
   header('Location: ../pages/home.php');
   exit;
 }
 
-// Helper: resolve order status badge classes (moved top-level to avoid inline function in HTML)
 if (!function_exists('resolveStatusBadge')) {
   function resolveStatusBadge($status)
   {
@@ -54,7 +46,6 @@ if (!function_exists('resolveStatusBadge')) {
   }
 }
 
-// Precompute frequently used display values
 $avatarSrc = (function ($ud) {
   $img = $ud['profile_img'] ?? '';
   if (!empty($img)) {
@@ -73,8 +64,7 @@ $selectedOther = ($genderVal === 'Other') ? 'selected' : '';
 
 $dobVal = $userData['date_of_birth'] ?? '';
 
-// Precompute data used in template to reduce inline PHP blocks
-// Cart summary
+
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 $cartProducts = array();
 $cartSubtotal = 0.00;
@@ -118,14 +108,11 @@ try {
     }
   }
 } catch (Exception $e) {
-  // Fail silently to avoid breaking the page; orders UI will show empty state
 }
 
-// Handle address update
 $updateMessage = '';
 $updateType = '';
 
-// Handle profile update (including image upload)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['change_password']) && !isset($_POST['update_address'])) {
   $first_name = trim($_POST['first_name'] ?? $userData['first_name']);
   $contact_number = trim($_POST['contact_number'] ?? $userData['contact_number']);
@@ -137,7 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['change_password']) &
     $date_of_birth = null;
   }
 
-  // Handle image upload
   if (isset($_FILES['profile_img']) && $_FILES['profile_img']['error'] === UPLOAD_ERR_OK) {
     $imgTmp = $_FILES['profile_img']['tmp_name'];
     $imgName = basename($_FILES['profile_img']['name']);
@@ -152,7 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['change_password']) &
     }
   }
 
-  // Update profile info in DB
   try {
     $updateStmt = $pdo->prepare("UPDATE customers SET first_name=?, contact_number=?, gender=?, date_of_birth=?, email=?, profile_img=? WHERE customer_id=?");
     $result = $updateStmt->execute([$first_name, $contact_number, $gender, $date_of_birth, $email, $profile_img, $user_id]);
@@ -243,7 +228,7 @@ renderHeader([
   'mainClass' => 'flex-1 py-8 md:py-12'
 ]);
 ?>
-<div class="mx-auto max-w-screen-xl px-2 md:px-6 lg:px-8">
+<div class="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
   <div class="flex flex-col md:flex-row gap-8">
     <!-- Sidebar -->
     <aside
@@ -301,7 +286,6 @@ renderHeader([
                   value="<?= htmlspecialchars($userData['username'] ?? $user_name); ?>" name="username" readonly />
                 <span class="text-xs text-slate-500">Username can only be changed once.</span>
               </div>
-              <!-- Edit Profile scroll handled in ../js/profile-page.js -->
               <div>
                 <label class="block text-sm text-slate-700 mb-1">Name</label>
                 <input type="text" class="form-input w-full" value="<?= htmlspecialchars($userData['first_name']); ?>"
@@ -348,7 +332,6 @@ renderHeader([
       <div id="section-addresses" style="display:none;">
         <div class="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 mt-8">
           <h2 class="text-lg font-semibold text-slate-900 mb-4">My Address</h2>
-          <!-- Warning banner placeholder for missing address (populated by ../js/profile-page.js) -->
           <div id="address-warning" class="mb-4" style="display:none;"></div>
           <form method="post" autocomplete="off">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

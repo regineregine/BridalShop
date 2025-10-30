@@ -1,5 +1,4 @@
-// Profile page interactions consolidated to avoid inline <script> blocks in PHP templates
-// This helps formatters and keeps the PHP file clean.
+
 
 (function() {
   function ready(fn) {
@@ -10,7 +9,6 @@
     }
   }
 
-  // Global logout helper
   window.logout = function() {
     if (confirm('Are you sure you want to logout?')) {
       window.location.href = '../backend/logout.php';
@@ -18,7 +16,6 @@
   };
 
   ready(function() {
-    // Edit profile link scroll and focus
     var editLink = document.getElementById('edit-profile-link');
     if (editLink) {
       editLink.addEventListener('click', function(e) {
@@ -32,7 +29,6 @@
       });
     }
 
-    // Change password toggling
     var showBtn = document.getElementById('show-change-password');
     var sidebarBtn = document.getElementById('sidebar-change-password');
     var profileBtn = document.getElementById('sidebar-profile');
@@ -77,7 +73,6 @@
       });
     }
 
-    // Sidebar section routing
     var links = document.querySelectorAll('.sidebar-link');
     var sections = {
       'sidebar-profile': document.getElementById('section-profile'),
@@ -113,10 +108,8 @@
       });
     });
 
-    // Default: show profile section
     showSection('sidebar-profile');
 
-    // If redirected due to missing address, auto-open Addresses section and show a warning
     try {
       var params = new URLSearchParams(window.location.search);
       var missingAddress = params.get('error') === 'missing_address' || params.get('missing_address') === '1';
@@ -137,7 +130,6 @@
         }
       }
     } catch (e) {
-      // no-op
     }
   });
 })();

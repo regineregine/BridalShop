@@ -16,23 +16,19 @@ try {
     die('Connection failed: ' . $e->getMessage());
 }
 
-// Function to connect to MySQL using PDO (for compatibility with existing code)
 function pdo_connect_mysql()
 {
     global $pdo;
     return $pdo;
 }
 
-// Function to format price
 function format_price($price)
 {
     return '₱' . number_format($price, 2);
 }
 
-// Template header function
 function template_header($title)
 {
-    // Buffer PHP components so their PHP executes and HTML is captured
     ob_start();
     include('../components/navbar.php');
     $navbarHtml = ob_get_clean();
@@ -41,7 +37,6 @@ function template_header($title)
     include('../components/modal.php');
     $modalHtml = ob_get_clean();
 
-    // Inline compiled CSS via helper
     ob_start();
     include_once('../layouts/styles-inline.php');
     renderInlineStylesFromFiles(['../output.css']);

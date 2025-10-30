@@ -1,7 +1,5 @@
 <?php
 require 'connections.php';
-
-// Set content type to JSON for AJAX responses
 header('Content-Type: application/json');
 
 // Check if form was submitted

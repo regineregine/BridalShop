@@ -1,22 +1,17 @@
 <style>
-  /* Hide scrollbar for reviews row */
   #reviews-row {
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* IE 10+ */
   }
 
   #reviews-row::-webkit-scrollbar {
     display: none;
-    /* Chrome/Safari/Webkit */
   }
 </style>
 <?php
 require_once('../backend/session_check.php');
 $isLoggedIn = isLoggedIn();
 
-// Get user data directly from session for consistency
 $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : null;
 $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
 
@@ -32,15 +27,13 @@ renderHeader([
 $title = "WELCOME TO";
 $highlight = 'PROMISE';
 $subtitle = "We design and curate stunning wedding dresses for brides and grooms, blending elegance, comfort, and romance—because every couple deserves to shine on their wedding day.";
-$extra_class = ""; // removed extra vertical padding to avoid large gap under the hero
+$extra_class = "";
 
 include('../components/hero.php');
 ?>
 
 
-<!-- Personalized Welcome Modal (for login or registration) -->
 <?php
-// If login_process or reg_process set a flag to show welcome, capture and unset it so modal shows once immediately after login or registration
 $showWelcomeFromServer = false;
 if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
   $showWelcomeFromServer = true;
@@ -48,7 +41,6 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 }
 ?>
 <?php if ($showWelcomeFromServer): ?>
-  <!-- Modal container (hidden by default) -->
   <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none">
     <!-- Backdrop -->
     <div id="welcome-modal-backdrop" class="absolute inset-0 bg-black/50 opacity-0 transition-opacity" data-close="true">
@@ -78,8 +70,8 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 <?php endif; ?>
 
 <!-- FEATURED PRODUCTS -->
-<section class="flex-grow py-16 md:py-20">
-  <div class="relative z-10 m-auto max-w-screen-xl justify-center py-2">
+<section class="grow py-16 md:py-20">
+  <div class="relative z-10 m-auto max-w-7xl justify-center py-2">
     <!-- Revamped heading: centered uppercase with horizontal rules each side -->
     <div class="mx-auto max-w-5xl">
       <div class="flex items-center gap-6">
@@ -126,14 +118,14 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
           <!-- Item 1 -->
           <figure class="min-w-[220px] snap-center sm:min-w-[260px] md:min-w-[320px] md:snap-start lg:min-w-[360px]"
             role="listitem">
-            <div class="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+            <div class="aspect-3/4 overflow-hidden rounded-lg bg-white">
               <img src="../img/p-1.webp" alt="Gwynne M." loading="lazy" decoding="async"
                 sizes="(min-width: 1024px) 360px, (min-width: 768px) 320px, (min-width: 640px) 260px, 220px"
                 class="h-full w-full object-cover" />
             </div>
             <figcaption class="mt-4 text-center">
               <div class="font-semibold text-slate-900">Gwynne M.</div>
-              <blockquote class="mt-2 min-h-[3.5rem] text-sm text-slate-700 sm:min-h-[3rem]">
+              <blockquote class="mt-2 min-h-14 text-sm text-slate-700 sm:min-h-12">
                 "I knew the Elmi was everything I wanted, but I was nervous
                 to order online. I did it anyway and was blown away."
               </blockquote>
@@ -142,14 +134,14 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 
           <!-- Item 2 -->
           <figure class="min-w-[220px] snap-center sm:min-w-[260px] md:min-w-[320px] md:snap-start lg:min-w-[360px]">
-            <div class="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+            <div class="aspect-3/4 overflow-hidden rounded-lg bg-white">
               <img src="../img/p-5.webp" alt="Brianna F.K." loading="lazy" decoding="async"
                 sizes="(min-width: 1024px) 360px, (min-width: 768px) 320px, (min-width: 640px) 260px, 220px"
                 class="h-full w-full object-cover" />
             </div>
             <figcaption class="mt-4 text-center">
               <div class="font-semibold text-slate-900">Brianna F.K.</div>
-              <blockquote class="mt-2 min-h-[3.5rem] text-sm text-slate-700 sm:min-h-[3rem]">
+              <blockquote class="mt-2 min-h-14text-sm text-slate-700 sm:min-h-12">
                 "The quality is INSANE. The glitter was perfect, boning and
                 structure were top tier in the corset."
               </blockquote>
@@ -158,14 +150,14 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 
           <!-- Item 3 -->
           <figure class="min-w-[220px] snap-center sm:min-w-[260px] md:min-w-[320px] md:snap-start lg:min-w-[360px]">
-            <div class="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+            <div class="aspect-3/4 overflow-hidden rounded-lg bg-white">
               <img src="../img/p-3.webp" alt="Brittany F." loading="lazy" decoding="async"
                 sizes="(min-width: 1024px) 360px, (min-width: 768px) 320px, (min-width: 640px) 260px, 220px"
                 class="h-full w-full object-cover" />
             </div>
             <figcaption class="mt-4 text-center">
               <div class="font-semibold text-slate-900">Brittany F.</div>
-              <blockquote class="mt-2 min-h-[3.5rem] text-sm text-slate-700 sm:min-h-[3rem]">
+              <blockquote class="mt-2 min-h-14text-sm text-slate-700 sm:min-h-12">
                 "I just wanna say a big thank you to everyone who made our
                 big day so incredible."
               </blockquote>
@@ -174,14 +166,14 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 
           <!-- Item 4 -->
           <figure class="min-w-[220px] snap-center sm:min-w-[260px] md:min-w-[320px] md:snap-start lg:min-w-[360px]">
-            <div class="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+            <div class="aspect-3/4 overflow-hidden rounded-lg bg-white">
               <img src="../img/p-4.webp" alt="Camille R." loading="lazy" decoding="async"
                 sizes="(min-width: 1024px) 360px, (min-width: 768px) 320px, (min-width: 640px) 260px, 220px"
                 class="h-full w-full object-cover" />
             </div>
             <figcaption class="mt-4 text-center">
               <div class="font-semibold font-Tinos text-slate-900">Camille R.</div>
-              <blockquote class="mt-2 min-h-[3.5rem] text-sm text-slate-700 sm:min-h-[3rem]">
+              <blockquote class="mt-2 min-h-14text-sm text-slate-700 sm:min-h-12">
                 "The staff was incredible and the dress was perfect."
               </blockquote>
             </figcaption>
@@ -189,14 +181,14 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 
           <!-- Item 5 -->
           <figure class="min-w-[220px] snap-center sm:min-w-[260px] md:min-w-[320px] md:snap-start lg:min-w-[360px]">
-            <div class="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+            <div class="aspect-3/4 overflow-hidden rounded-lg bg-white">
               <img src="../img/p-2.jpg" alt="Samantha P." loading="lazy" decoding="async"
                 sizes="(min-width: 1024px) 360px, (min-width: 768px) 320px, (min-width: 640px) 260px, 220px"
                 class="h-full w-full object-cover" />
             </div>
             <figcaption class="mt-4 text-center">
               <div class="font-semibold text-slate-900">Samantha P.</div>
-              <blockquote class="mt-2 min-h-[3.5rem] text-sm text-slate-700 sm:min-h-[3rem]">
+              <blockquote class="mt-2 min-h-14text-sm text-slate-700 sm:min-h-12">
                 "Absolutely beautiful gown and top notch service."
               </blockquote>
             </figcaption>
@@ -211,7 +203,7 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 
 <!-- Story & Image -->
 <section class="py-16 md:py-5">
-  <div class="mx-auto max-w-screen-xl px-4">
+  <div class="mx-auto max-w-7xl px-4">
     <div class="rounded-xl bg-candy-mint p-6 sm:p-10 md:p-12">
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
         <!-- Left: text panel -->
@@ -238,7 +230,7 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
         <!-- Right: image panel -->
         <div class="relative">
           <div class="overflow-hidden rounded-lg shadow-[0_10px_30px_rgba(2,6,23,0.15)]">
-            <div class="aspect-[3/4] md:aspect-[3/4]">
+            <div class="aspect-3/4 md:aspect-3/4">
               <img src="../img/about-image.webp" alt="Brides trying on dresses at a trunk show" loading="lazy"
                 decoding="async" class="h-full w-full object-cover" />
             </div>
@@ -251,7 +243,7 @@ if (isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
 
 <!-- OUR PROCESS (Blog-style card) -->
 <section class="bg-candy-cream py-16 md:py-20">
-  <div class="mx-auto max-w-screen-xl px-4">
+  <div class="mx-auto max-w-7xl px-4">
     <div class="mx-auto max-w-6xl">
       <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-12">
         <!-- Left image with double border frame -->
